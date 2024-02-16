@@ -34,3 +34,10 @@ const light = new THREE.AmbientLight(
     0x404040, 3
 );
 */
+
+// Hemisphere light is a light that has a color on the top and a color on the bottom
+const light = new THREE.HemisphereLight(
+    0xFFFFBB, 0x080820, 2
+);
+
+scene.add(light);
