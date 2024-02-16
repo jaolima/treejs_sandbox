@@ -41,3 +41,6 @@ const light = new THREE.HemisphereLight(
 );
 
 scene.add(light);
+
+console.log(THREEx3)
+console.log(THREE.OrbitControls)
