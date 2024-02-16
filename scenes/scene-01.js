@@ -11,4 +11,5 @@ const cube = new THREE.Mesh(
 );
 
 scene.add(cube);
+        renderer.render(scene, camera);
 

@@ -16,3 +16,16 @@ renderer.setSize(
 document.querySelector(
     options.targetSelector
 ).appendChild(renderer.domElement);
+
+// Scene is a container for all the objects in the scene
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(
+    options.backgroundColor
+);
+
+// Camera is the point of view from which the scene is rendered
+const camera = new THREE.PerspectiveCamera(
+    50, options.width / options.height
+);
+
+camera.position.z = 5;
