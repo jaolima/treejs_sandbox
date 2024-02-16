@@ -44,3 +44,16 @@ scene.add(light);
 
 console.log(THREEx3)
 console.log(THREE.OrbitControls)
+
+const x3 = new THREEx3(
+    {
+        THREE,
+        OrbitControls: THREE.OrbitControls,
+        camera,
+        renderer,
+        scene
+    }
+);
+
+x3.add(camera);
+x3.add(light);
