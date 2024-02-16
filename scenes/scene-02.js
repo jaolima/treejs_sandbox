@@ -1,7 +1,10 @@
 
 // Material is a set of properties that define how the surface of the geometry should look
 const material = new THREE.MeshLambertMaterial(
-    { color: 0x348feb }
+    {
+         color: 0x348feb,
+         side: THREE.DoubleSide 
+    }
 );
 
 // CUBE
