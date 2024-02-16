@@ -26,6 +26,8 @@ renderer.setAnimationLoop(() => {
     cube.rotation.y += 0.01;
     
     x3.tick();
+
+    // x3.fps() is a helper function that logs the current frame rate to the console
     x3.fps(() => {
         renderer.render(scene, camera);
     })

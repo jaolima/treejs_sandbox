@@ -5,7 +5,15 @@ const options = {
 }
 
 // renderer displays your beautifully crafted scenes
-const renderer = new THREE.WebGLRenderer();
+// antialias is a technique used to improve the quality of your scene
+const renderer = new THREE.WebGLRenderer(
+    { antialias: true }
+);
+
+// setPixelRatio is used to make sure that your scene looks good on high resolution devices 
+renderer.setPixelRatio(
+    window.devicePixelRatio
+);
 
 renderer.setSize(
     options.width, options.height
@@ -55,5 +63,5 @@ const x3 = new THREEx3(
     }
 );
 
-x3.add(camera);
-x3.add(light);
+x3.add(camera, {open: false});
+x3.add(light, {helper: { visible: false }});
