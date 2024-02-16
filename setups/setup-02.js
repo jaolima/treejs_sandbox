@@ -32,7 +32,9 @@ const camera = new THREE.PerspectiveCamera(
     50, options.width / options.height
 );
 
-camera.position.z = 5;
+camera.position.x = 7.50;
+camera.position.y = 4;
+camera.position.z = 7;
 
 // LIGHT SETUP
 
