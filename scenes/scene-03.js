@@ -1,5 +1,7 @@
 const path = new THREE.Shape();
 
+const d = new THREE.Shape();
+
 // where drawing passes through
 // Romantic Heart
 path.moveTo(0.3, 1.5);
@@ -9,6 +11,7 @@ path.quadraticCurveTo(1.5, 2.2, 1.9, 2.2);
 path.quadraticCurveTo(2.5, 2.2, 2.5, 1.5);
 path.quadraticCurveTo(2.5, 1.0, 1.4, 0.3);
 path.quadraticCurveTo(0.3, 1.0, 0.3, 1.5);
+
 // path.quadraticCurveTo(5, 1, 8, 3);
 // path.bezierCurveTo(3, 5, 6, 1, 8, 3);
 
@@ -16,10 +19,6 @@ path.quadraticCurveTo(0.3, 1.0, 0.3, 1.5);
 // path.lineTo(3, 1);
 // path.lineTo(1, 1);
 // path.lineTo(1, 3);
-
-// const geometry = new THREE.ShapeBufferGeometry(
-//     path
-// );
 
 const geometry = new THREE.ExtrudeBufferGeometry(
     path, {
