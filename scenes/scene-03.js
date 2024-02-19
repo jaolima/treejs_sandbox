@@ -17,8 +17,17 @@ path.quadraticCurveTo(0.3, 1.0, 0.3, 1.5);
 // path.lineTo(1, 1);
 // path.lineTo(1, 3);
 
-const geometry = new THREE.ShapeBufferGeometry(
-    path
+// const geometry = new THREE.ShapeBufferGeometry(
+//     path
+// );
+
+const geometry = new THREE.ExtrudeBufferGeometry(
+    path, {
+        depth: 0.5,
+        bevelEnabled: true,
+        bevelSize: 0.1,
+        bevelThickness: 0.1,
+    }
 );
 
 // LineBasicMaterial is a set of properties that define how the line should look
