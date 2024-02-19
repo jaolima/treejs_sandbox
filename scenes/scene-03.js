@@ -1,4 +1,4 @@
-const path = new THREE.Path();
+const path = new THREE.Shape();
 
 // where drawing passes through
 // Romantic Heart
@@ -17,16 +17,17 @@ path.quadraticCurveTo(0.3, 1.0, 0.3, 1.5);
 // path.lineTo(1, 1);
 // path.lineTo(1, 3);
 
-const geometry = new THREE.BufferGeometry();
-geometry.setFromPoints(path.getPoints());
+const geometry = new THREE.ShapeBufferGeometry(
+    path
+);
 
 // LineBasicMaterial is a set of properties that define how the line should look
-const material = new THREE.LineBasicMaterial(
-    { color: 0xFFFFFF }
+const material = new THREE.MeshLambertMaterial(
+    { color: 0xeb3452 , side: THREE.DoubleSide}
     );
 
 // Line is a set of points, and a line is drawn between each pair of consecutive points
-const draw = new THREE.Line(geometry, material);
+const draw = new THREE.Mesh(geometry, material);
 scene.add(draw);
 
 renderer.setAnimationLoop(() => {
