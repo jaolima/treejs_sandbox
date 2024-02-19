@@ -7,6 +7,8 @@ const cube = new THREE.Mesh(
 
 cube.position.x = 1;
 cube.position.y = 1;
+// castShadow is a property that allows the object to cast a shadow
+cube.castShadow = true;
 scene.add(cube);
 
 const floor = new THREE.Mesh(
@@ -17,7 +19,21 @@ const floor = new THREE.Mesh(
 );
 
 floor.rotation.x = THREE.MathUtils.degToRad(-90);
+// receiveShadow is a property that allows the object to receive a shadow
+floor.receiveShadow = true;
 scene.add(floor);
+
+const shadowLight = new THREE.PointLight(
+    0xFFFFFF, 2, 10
+);
+
+shadowLight.position.y = 4;
+shadowLight.castShadow = true;
+
+scene.add(shadowLight);
+
+x3.add(shadowLight, {helper: { visible: false }});
+x3.add(cube);
 
 renderer.setAnimationLoop(() => {
     x3.tick();

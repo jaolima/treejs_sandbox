@@ -72,3 +72,6 @@ const x3 = new THREEx3(
 
 x3.add(camera, {open: false});
 x3.add(light, {helper: { visible: false }});
+
+// enabling shadows
+renderer.shadowMap.enabled = true;
