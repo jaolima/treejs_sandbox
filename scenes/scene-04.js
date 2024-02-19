@@ -13,7 +13,7 @@ scene.add(cube);
 
 const floor = new THREE.Mesh(
     new THREE.PlaneBufferGeometry(10, 10),
-    new THREE.MeshLambertMaterial({ 
+    new THREE.MeshPhongMaterial({ 
         color: 0xFFFFFF 
     })
 );
@@ -23,17 +23,27 @@ floor.rotation.x = THREE.MathUtils.degToRad(-90);
 floor.receiveShadow = true;
 scene.add(floor);
 
-// DirectionalLight is a light that gets emitted in a specific direction
-const sun = new THREE.DirectionalLight(
-    0xFFFFFF, 1
-);
-sun.position.y = 8;
-sun.castShadow = true;
-// target is a property that allows the light to point to a specific object
-sun.target = cube;
-scene.add(sun);
+// PointLight is a light that gets emitted from a single point in all directions
+// const shadowLight = new THREE.PointLight(
+//     0xFFFFFF, 2, 10
+// );
 
-x3.add(sun);
+// DirectionalLight is a light that gets emitted in a specific direction
+// const sun = new THREE.DirectionalLight(
+//     0xFFFFFF, 1
+// );
+
+const spot = new THREE.SpotLight(
+    0xFFFFFF, 3, 10, 0.4
+);
+
+spot.position.y = 8;
+spot.castShadow = true;
+// target is a property that allows the light to point to a specific object
+spot.target = cube;
+scene.add(spot);
+
+x3.add(spot, {helper: { visible: false}});
 x3.add(cube);
 
 renderer.setAnimationLoop(() => {

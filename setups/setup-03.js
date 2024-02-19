@@ -75,3 +75,5 @@ x3.add(light, {helper: { visible: false }});
 
 // enabling shadows
 renderer.shadowMap.enabled = true;
+// PCFSoftShadowMap is a technique used to improve the quality of the shadow
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
