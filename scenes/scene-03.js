@@ -1,7 +1,5 @@
 const path = new THREE.Shape();
 
-const d = new THREE.Shape();
-
 // where drawing passes through
 // Romantic Heart
 path.moveTo(0.3, 1.5);
