@@ -1,6 +1,6 @@
 const ball = new THREE.Mesh(
     new THREE.SphereBufferGeometry(0.5, 60, 60),
-    new THREE.MeshStandardMaterial({ 
+    new THREE.MeshPhysicalMaterial({ 
         color: 0xFFFFFF 
     })
 );
@@ -13,8 +13,9 @@ scene.add(ball);
 
 const floor = new THREE.Mesh(
     new THREE.PlaneBufferGeometry(10, 10),
-    new THREE.MeshStandardMaterial({ 
-        color: 0xFFFFFF, side: THREE.DoubleSide
+    new THREE.MeshPhysicalMaterial({ 
+        color: 0xFFFFFF, side: THREE.DoubleSide,
+        metalness: 0.48, roughness: 0.57
     })
 );
 
