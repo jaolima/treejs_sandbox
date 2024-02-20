@@ -77,3 +77,5 @@ x3.add(light, {helper: { visible: false }});
 renderer.shadowMap.enabled = true;
 // PCFSoftShadowMap is a technique used to improve the quality of the shadow
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+// physicallyCorrectLights is a property that allows the lights to behave more like real life lights
+renderer.physicallyCorrectLights = true;
