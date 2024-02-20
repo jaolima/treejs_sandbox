@@ -1,11 +1,17 @@
 const loader = new THREE.TextureLoader();
 
 const polyester = new THREE.MeshStandardMaterial({
-    map: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/polyester/basecolor.jpg')
+    map: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/polyester/basecolor.jpg'),
+    normalMap: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/polyester/normal.jpg'),
+})
+
+const wood = new THREE.MeshStandardMaterial({
+    map: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/wood/basecolor.jpg'),
+    normalMap: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/wood/normal.jpg'),
 })
 
 const ball = new THREE.Mesh(
-    new THREE.SphereBufferGeometry(0.5, 60, 60),
+    new THREE.SphereBufferGeometry(1.0, 60, 60),
     polyester
 );
 
@@ -17,10 +23,7 @@ scene.add(ball);
 
 const floor = new THREE.Mesh(
     new THREE.PlaneBufferGeometry(10, 10),
-    new THREE.MeshPhysicalMaterial({ 
-        color: 0xFFFFFF, side: THREE.DoubleSide,
-        metalness: 0.48, roughness: 0.57
-    })
+    wood
 );
 
 floor.rotation.x = THREE.MathUtils.degToRad(-90);
@@ -32,7 +35,8 @@ const spot = new THREE.PointLight(
     0xFFFFFF, 0.75
 );
 
-spot.position.y = 4;
+spot.position.x = -2;
+spot.position.y = 5;
 spot.castShadow = true;
 // target is a property that allows the light to point to a specific object
 spot.target = ball;
