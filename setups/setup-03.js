@@ -79,3 +79,5 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 // physicallyCorrectLights is a property that allows the lights to behave more like real life lights
 renderer.physicallyCorrectLights = true;
+
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
