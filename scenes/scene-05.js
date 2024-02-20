@@ -1,8 +1,12 @@
+const loader = new THREE.TextureLoader();
+
+const polyester = new THREE.MeshStandardMaterial({
+    map: loader.load('https://gbaptista.s3-sa-east-1.amazonaws.com/threejs/polyester/basecolor.jpg')
+})
+
 const ball = new THREE.Mesh(
     new THREE.SphereBufferGeometry(0.5, 60, 60),
-    new THREE.MeshPhysicalMaterial({ 
-        color: 0xFFFFFF 
-    })
+    polyester
 );
 
 ball.position.x = 1;
